@@ -47,7 +47,7 @@
 	names(all_data) <- col_feature
 
 ## --------------------------------------------------------------------------------------------------------------
-## 2.	Extracts only the measurements on the mean and standard deviation for each measurement. 
+## 2. Extracts only the measurements on the mean and standard deviation for each measurement. 
 ## --------------------------------------------------------------------------------------------------------------
 	## get the names of the columns with mean or std in it
 	col_mean_std <- col_feature[grep("mean|std",col_feature)]
@@ -57,7 +57,7 @@
 	rm(all_data)
 
 ## --------------------------------------------------------------------------------------------------------------
-## 3.	Uses descriptive activity names to name the activities in the data set
+## 3. Uses descriptive activity names to name the activities in the data set
 ## --------------------------------------------------------------------------------------------------------------
 	mean_std_data$activity = 
 		ifelse(mean_std_data$activity == 1, "Walking"
@@ -71,7 +71,7 @@
 		  )
   
 ## --------------------------------------------------------------------------------------------------------------
-## 4.	Appropriately labels the data set with descriptive variable names. 
+## 4. Appropriately labels the data set with descriptive variable names. 
 ## --------------------------------------------------------------------------------------------------------------
 	col_final <- gsub("\\-","\\.", col_mean_std)
 	col_final <- gsub("bodybody","body", col_final)
@@ -93,8 +93,8 @@
 	names(mean_std_data) <- col_final
   
 ## --------------------------------------------------------------------------------------------------------------
-## 5.	From the data set in step 4, creates a second, independent tidy data set 
-##      with the average of each variable for each activity and each subject.
+## 5. From the data set in step 4, creates a second, independent tidy data set 
+##    with the average of each variable for each activity and each subject.
 ## --------------------------------------------------------------------------------------------------------------
 	mean_std_data$id_activity = paste(mean_std_data$id, mean_std_data$activity, sep=":")
 	mean_std_data <- subset(mean_std_data, select = -c(id, activity))
@@ -112,7 +112,7 @@
 	mean_std_done <- mean_std_done[with(mean_std_done, order(id, activity)),]
   
 ## --------------------------------------------------------------------------------------------------------------
-## write the results to a file
+## 6. write the results to a file
 ## --------------------------------------------------------------------------------------------------------------
 	library(lubridate)
 
