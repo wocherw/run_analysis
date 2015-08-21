@@ -133,7 +133,7 @@ The goal is to prepare tidy data that can be used for later analysis.
 		
 ### In order to review the tidy data, then run the following.
 		
-		fileUrl <- "https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2FGDP.csv"
+		fileUrl <- "https://s3.amazonaws.com/coursera-uploads/user-336e4c674785029e4191fdef/975115/asst-3/bc5be560485411e5b250c79c6630ec86.txt"
 		download.file(fileUrl, destfile = "./mean_std_tidy_data_20150821_180530.txt", mode = "wb")
 
 		tidy_data <-  read.table("./mean_std_tidy_data_20150821_180530.txt", header=T, fill=T) 
