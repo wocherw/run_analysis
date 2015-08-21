@@ -59,15 +59,16 @@
 ## --------------------------------------------------------------------------------------------------------------
 ## 3.	Uses descriptive activity names to name the activities in the data set
 ## --------------------------------------------------------------------------------------------------------------
-	mean_std_data$activity = ifelse(mean_std_data$activity == 1, "Walking"
-								   , ifelse(mean_std_data$activity == 2, "Walking Upstairs"
-											, ifelse(mean_std_data$activity == 3, "Walking Downstairs"
-													 , ifelse(mean_std_data$activity == 4, "Sitting"
-															  , ifelse(mean_std_data$activity == 5, "Standing", "Laying")
-													 )
-											)
-								   )
-							  )
+	mean_std_data$activity = 
+		ifelse(mean_std_data$activity == 1, "Walking"
+			   , ifelse(mean_std_data$activity == 2, "Walking Upstairs"
+						, ifelse(mean_std_data$activity == 3, "Walking Downstairs"
+								 , ifelse(mean_std_data$activity == 4, "Sitting"
+										  , ifelse(mean_std_data$activity == 5, "Standing", "Laying")
+								 )
+						)
+			   )
+		  )
   
 ## --------------------------------------------------------------------------------------------------------------
 ## 4.	Appropriately labels the data set with descriptive variable names. 
