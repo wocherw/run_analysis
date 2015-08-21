@@ -62,11 +62,11 @@
 	mean_std_data$activity = 
 		ifelse(mean_std_data$activity == 1, "Walking"
 			   , ifelse(mean_std_data$activity == 2, "Walking Upstairs"
-						, ifelse(mean_std_data$activity == 3, "Walking Downstairs"
-								 , ifelse(mean_std_data$activity == 4, "Sitting"
-										  , ifelse(mean_std_data$activity == 5, "Standing", "Laying")
-								 )
-						)
+					, ifelse(mean_std_data$activity == 3, "Walking Downstairs"
+						 , ifelse(mean_std_data$activity == 4, "Sitting"
+							, ifelse(mean_std_data$activity == 5, "Standing", "Laying")
+						 )
+					)
 			   )
 		  )
   
